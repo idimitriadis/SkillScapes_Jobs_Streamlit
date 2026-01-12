@@ -40,7 +40,7 @@ else:
 
 date_range = st.sidebar.date_input(
     "Date Range",
-    value=(datetime.now() - timedelta(days=90), datetime.now()),
+    value=datetime(2025, 5, 1, 0, 0, 0, 0),
     max_value=datetime.now()
 )
 
