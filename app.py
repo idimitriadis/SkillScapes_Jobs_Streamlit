@@ -96,7 +96,7 @@ if check_api_connection():
                 st.metric("Total Jobs", f"{data.get('total_jobs', 0):,}")
 
         # Top occupations count
-        response = requests.get(f"{API_BASE_URL}/api/occupations/demand", params={"top_n": 100})
+        response = requests.get(f"{API_BASE_URL}/api/occupations/demand", params={"top_n": 200})
         if response.status_code == 200:
             data = response.json()
             with col2:
@@ -110,7 +110,7 @@ if check_api_connection():
                 st.metric("Regions (NUTS2)", f"{data.get('count', 0):,}")
 
         # Skills count
-        response = requests.get(f"{API_BASE_URL}/api/skills/top", params={"top_n": 100})
+        response = requests.get(f"{API_BASE_URL}/api/skills/top", params={"top_n": 5000})
         if response.status_code == 200:
             data = response.json()
             with col4:
